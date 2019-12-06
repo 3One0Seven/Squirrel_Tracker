@@ -1,4 +1,4 @@
-# Squirrel Tracker - A web application
+# Squirrel Tracker - A Web Application
 
 # What is it?
 
