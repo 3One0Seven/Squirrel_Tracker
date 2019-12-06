@@ -17,6 +17,13 @@
       </button>
     </center>
   </a>
+  <a href='stats/' class=''>
+    <center>
+      <button type="button" class='button'>
+      Gerenal Statistics
+      </button>
+    </center>
+  </a>
   <br>
 	<table border = "1">
 	    <thead>
@@ -57,9 +64,9 @@
 	    <tbody id="myTable">
 	    	{% for squirrel in numbers %}
 	        <tr>
-	        <td>{{squirrel.X}}</td>
+	          <td>{{squirrel.X}}</td>
           	<td>{{squirrel.Y}}</td>
-          	<td>{{squirrel.Unique_Squirrel_ID}}</td>
+          	<td><a href="{{squirrel.Unique_Squirrel_ID}}">{{squirrel.Unique_Squirrel_ID}}</a></td>
             <td>{{squirrel.Hectare}}</td>
             <td>{{squirrel.Shift}}</td>
             <td>{{squirrel.Date}}</td>

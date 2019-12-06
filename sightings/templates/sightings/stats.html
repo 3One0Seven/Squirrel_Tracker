@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>General Statistics</title>
+	<h1><center>General Statistics</center></h1>
+</head>
+<body>
+	<center>
+	<table border = "1">
+	    <thead>
+	        <tr>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Unique_Squirrel_ID</th>
+            <th>Shift</th>
+            <th>Date</th>
+            </tr>
+	    </thead>
+	    <tbody id="myTable">
+	    	{% for squirrel in squirrels %}
+	        <tr>
+	        <td>{{squirrel.X}}</td>
+          	<td>{{squirrel.Y}}</td>
+          	<td>{{squirrel.Unique_Squirrel_ID}}</td>
+          	<td>{{squirrel.Shift}}</td>
+            <td>{{squirrel.Date}}</td>
+            </tr>
+            {% endfor %}
+	    </tbody>
+	    </center>
+</body>
+</html>
