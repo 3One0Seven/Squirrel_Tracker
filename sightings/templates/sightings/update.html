@@ -5,12 +5,14 @@
 	<h1><center>Update Squirrel Information</center></h1>
 </head>
 <body>
+    <center>
     <form method="post">
         {% csrf_token %}
         {{form.as_p}}
         <or>
         <input type="submit" name="Submit">
-    </form>>
+    </form>
+    </center>
 
 </body>
 </html>
