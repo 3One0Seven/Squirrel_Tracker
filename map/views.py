@@ -8,3 +8,34 @@ def map(request,*args,**kwargs):
         'sightings': sightings
     }
     return render(request, 'map/map.html', context)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
