@@ -1,45 +1,46 @@
 
 from django.core.management.base import BaseCommand, CommandError
 import datetime, csv
-from squdata.models import Squirreldata
+from sightings.models import Squirrel
 from django.apps import apps
 
 
 class Command(BaseCommand):
-    help = 'exports all information to csv files'
+    help = 'exports files'
 
     def add_arguments(self, parser):
-        parser.add_argument('website_path', type=str)
+        parser.add_argument('path', type=str)
 
     def handle(self, *args, **options):
-        with open(options['website_path'], 'w', newline='') as csvfile:
-            names = ['latitude',
-                     'longitude',
-                     'unique_squirrel_id',
-                     'shift',
-                     'date',
-                     'age',
-                     'fur_color',
-                     'location',
-                     'specific_location',
-                     'running',
-                     'chasing',
-                     'climbing',
-                     'eating',
-                     'foraging',
-                     'other_activities',
-                     'kuks',
-                     'quaas',
-                     'moans',
-                     'tail_flags',
-                     'tail_twitches',
-                     'approaches',
-                     'indifferent',
-                     'runs_from']
-            writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
+        with open(options['path'], 'w', newline='') as f:
+            names = ['X',
+                     'Y',
+                     'Unique_Squirrel_ID',
+                     'Shift',
+                     'Date',
+                     'Age',
+                     'Primary_Fur_Color',
+                     'Location',
+                     'Specific_Location',
+                     'Running',
+                     'Chasing',
+                     'Climbing',
+                     'Eating',
+                     'Foraging',
+                     'Other_Activities',
+                     'Kuks',
+                     'Quaas',
+                     'Moans',
+                     'Tail_Flags',
+                     'Tail_Twitches',
+                     'Approaches',
+                     'Indifferent',
+                     'Runs_From']
+            writer = csv.writer(f, quoting=csv.QUOTE_ALL)
             writer.writerow(names)
-            for i in Squirreldata.objects.all():
+            for i in Squirrel.objects.all():
                 writer.writerow([getattr(i, name) for name in names])
+    print('Success!')
 
 
 

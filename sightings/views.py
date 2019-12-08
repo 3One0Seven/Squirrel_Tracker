@@ -65,4 +65,3 @@ def stats(request):
                'eating': eating,
     }
     return render(request,'sightings/stats.html',context)
-

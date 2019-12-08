@@ -10,6 +10,7 @@ class Command(BaseCommand):
         parser.add_argument('path', type=str, help='file path')
 
     def handle(self, *args, **kwargs):
+        Squirrel.objects.all().delete()
         path = kwargs['path']
         pattern = re.compile(r'(\d{2})(\d{2})(\d{4})')
         with open(path, mode='r') as f:
