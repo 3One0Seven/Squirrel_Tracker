@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Squirrel
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .forms import SqForm
+from django.db.models import Avg, Max, Min, Count
 
 def sightings_list(request):
     squirrels = Squirrel.objects.all()
