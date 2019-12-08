@@ -14,7 +14,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         with open(options['website_path'], 'w', newline='') as csvfile:
             names = ['latitude',
-                     'longitude', 
+                     'longitude',
                      'unique_squirrel_id',
                      'shift',
                      'date',
