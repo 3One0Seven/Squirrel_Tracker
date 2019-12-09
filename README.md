@@ -4,9 +4,13 @@
 
 Squirrel Tracker is a web application which provides the users with the visualized sightings of squirrels found around Central Park at Manhattan, NYC. The web applicaiton, based upon Django framework, can import squirrel data and allows users to add, update and delete data.
 
+# How to Access Squirrel Tracker
+
+Link: https://carbide-buckeye-254123.appspot.com/
+
 # Data Source
 
-2018 Central Park Squirrel Census
+2018 Central Park Squirrel Census: https://data.cityofnewyork.us/Environment/2018-Central-Park-Squirrel-Census-Squirrel-Data/vfnx-vebw
 
 # Key Features 
 
@@ -84,7 +88,7 @@ This is a semester project dedicated for IEOR 4501 Tools for Analytics. Any cont
 
 # Contributors
 
-Group Name: Ninja Turtles
+Project Group 103
 
 Section Number: 02
 
