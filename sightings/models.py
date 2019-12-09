@@ -4,12 +4,12 @@ from django.utils.translation import gettext as _
 class Squirrel(models.Model):
 
     X = models.FloatField(
-        help_text=_('X'),
+        help_text=_('Longitude'),
         null=True,
     )
     
     Y = models.FloatField(
-        help_text=_('Y'),
+        help_text=_('Latitude'),
         null=True,
     )
 

@@ -52,16 +52,19 @@ def add(request):
 def stats(request):
     squirrels = Squirrel.objects.all()
     total = len(squirrels)
-    latitude = squirrels.aggregate(minimum=Min('Latitude'), maximum=Max('Latitude'))
-    longitude = squirrels.aggregate(minimum=Min('Longitude'), maximum=Max('Longitude'))
-    foraging = squirrels.values_list('Foraging').annotate(Count('Foraging'))
-    chasing = squirrels.values_list('Chasing').annotate(Count('Chasing'))
+    longitude = squirrels.aggregate(minimum=Min('X'), maximum=Max('X'))
+    latitude = squirrels.aggregate(minimum=Min('Y'), maximum=Max('Y'))
+    shift = squirrels.values_list('Shift').annotate(Count('Shift'))
+    running = squirrels.values_list('Running').annotate(Count('Running'))
     eating = squirrels.values_list('Eating').annotate(Count('Eating'))
     context = {'total': total,
-               'lattitude': lattitude,
+               'latitude': latitude,
                'longitude': longitude,
-               'foraging': foraging,
-               'chasing': chasing,
-               'eating': eating,
+               'AM': shift[0][1],
+               'PM': shift[1][1],
+               'Is_Running': running[1][1],
+               'Not_Running': running[0][1],
+               'Is_Eating': eating[1][1],
+               'Not_Eating': eating[0][1],
     }
     return render(request,'sightings/stats.html',context)

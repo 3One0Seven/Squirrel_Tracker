@@ -2,35 +2,65 @@
 <html>
 <head>
 	<title>Squirrel Sightings</title>
-	<h1><center>Squirrel List</center></h1>
+	<h1><center>Squirrels List</center></h1>
 </head>
 <body>
-  <style>.button{background-color: #555555;
-                font-size: 20px;
-                color: white;}
+  <style>
+      ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    li {
+      float: left;
+    }
+
+    li a {
+      font-size: 20px;
+      font-weight: bold;
+      display: block;
+      color: black;
+      text-align: center;
+      padding: 20px 30px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: #dddddd;
+    }
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    a {
+      text-decoration: none;
+    }
   </style>
-    <br>
-  <a href='add/' class=''>
-    <center>
-      <button type="button" class='button'>
-      Add Sighting
-      </button>
-    </center>
-  </a>
-  <a href='stats/' class=''>
-    <center>
-      <button type="button" class='button'>
-      Gerenal Statistics
-      </button>
-    </center>
-  </a>
+  <ul>
+  <li><a class="active" href="/..">Home</a></li>
+  <li><a href="/map">Map</a></li>
+  <li><a href="/sightings/add/">Add Squirrel Informations</a></li>
+  <li><a href="/sightings/stats/">General Statistics of Squirrels</a></li>
+  </ul>
   <br>
-	<table border = "1">
+	<table>
 	    <thead>
 	      <tr>
-          <th>Latitude</th>
-          <th>Longitude</th>
           <th>Unique_Squirrel_ID</th>
+          <th>Longitude</th>
+          <th>Latitude</th>
           <th>Hectare</th>
           <th>Shift</th>
           <th>Date</th>
@@ -64,9 +94,9 @@
 	    <tbody id="myTable">
 	    	{% for squirrel in numbers %}
 	        <tr>
+            <td><a href="{{squirrel.Unique_Squirrel_ID}}">{{squirrel.Unique_Squirrel_ID}}</a></td>
 	          <td>{{squirrel.X}}</td>
           	<td>{{squirrel.Y}}</td>
-          	<td><a href="{{squirrel.Unique_Squirrel_ID}}">{{squirrel.Unique_Squirrel_ID}}</a></td>
             <td>{{squirrel.Hectare}}</td>
             <td>{{squirrel.Shift}}</td>
             <td>{{squirrel.Date}}</td>

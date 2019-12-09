@@ -5,28 +5,19 @@
 	<h1><center>General Statistics</center></h1>
 </head>
 <body>
+  <p><a href="/sightings" style="text-decoration: none;"><center>Back to List Page</center></a></p>
 	<center>
-	<table border = "1">
-	    <thead>
-	        <tr>
-            <th>Latitude</th>
-            <th>Longitude</th>
-            <th>Unique_Squirrel_ID</th>
-            <th>Shift</th>
-            <th>Date</th>
-            </tr>
-	    </thead>
-	    <tbody id="myTable">
-	    	{% for squirrel in squirrels %}
-	        <tr>
-	        <td>{{squirrel.X}}</td>
-          	<td>{{squirrel.Y}}</td>
-          	<td>{{squirrel.Unique_Squirrel_ID}}</td>
-          	<td>{{squirrel.Shift}}</td>
-            <td>{{squirrel.Date}}</td>
-            </tr>
-            {% endfor %}
-	    </tbody>
-	    </center>
+        	<li>There are totally {{total}} squirrels.</li>
+      		<br>
+      		<li>Minimum Longitude: {{longitude.minimum}} | Maximum Longitude: {{longitude.maximum}}</li>
+      		<br>
+      		<li>Minimum Latitude: {{latitude.minimum}} | Maximum Latitude: {{latitude.maximum}}</li>
+      		<br>
+      		<li>AM: {{AM}} | PM: {{PM}}</li>
+      		<br>
+     		<li>Is Running: {{Is_Running}} | Not Running: {{Not_Running}}</li>
+      		<br>
+      		<li>Is Eating: {{Is_Eating}} | Not Eating: {{Not_Eating}}</li>
+	</center>
 </body>
 </html>
